@@ -1,0 +1,31 @@
+/*
+CSS file created with:Instant Blueprint - Create a web project framework in seconds.
+http://instantblueprint.com
+
+Project: Currency converter
+File: css/style.css
+Last edited: October 15, 2011, 9:59 am
+*/
+
+/*  Main  */
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+}
+
+#wrapper {
+ margin:50px auto;
+ width:900px; /*  Change to desired width :)  */
+}
+
+#container {
+	text-align:center;
+}
+
+h1 {
+	margin:10px 0;
+}
+
+#result {
+	margin:20px;
+}
