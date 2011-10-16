@@ -9,29 +9,39 @@ Last edited: October 15, 2011, 9:59 am
 
 /*  Main  */
 body {
- font-family: Arial, Helvetica, sans-serif;
+ font-family: 'Spinnaker',Arial, Helvetica, sans-serif;
  font-size: 13px;
+ background:url("../images/fancy_deboss.png") 0 0 repeat;
+ text-shadow: 2px 4px 5px #ababab;
+ filter: dropshadow(color=#ababab, offx=2, offy=4);	
 }
 
-#wrapper {
+.wrapper {
  margin:50px auto;
  width:900px; /*  Change to desired width :)  */
 }
 
-#container {
+.container {
 	text-align:center;
 }
 
-select {width:250px;}
-
-input {vertical-align:top; height:20px;}
-
-input[type="button"] {height:27px; padding:0 10px;}
-
-h1 {
+.container h1 {
+	font-size:30px;	
 	margin:10px 0;
 }
 
+.main {margin:40px 0;}
+
+.main select {width:300px;}
+
+.main input {vertical-align:top; height:20px; font-size:14px;}
+
+.main input[type="button"] {height:27px; padding:0 10px;}
+
+#toCur {display:inline;}
+
 #result {
+	display:inline;
+	font-size:24px;
 	margin:20px;
 }
