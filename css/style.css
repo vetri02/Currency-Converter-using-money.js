@@ -22,6 +22,12 @@ body {
 	text-align:center;
 }
 
+select {width:250px;}
+
+input {vertical-align:top; height:20px;}
+
+input[type="button"] {height:27px; padding:0 10px;}
+
 h1 {
 	margin:10px 0;
 }

@@ -14,6 +14,7 @@ var cc = {
 		this.selectTo = document.getElementById("toSelect");
 		
 		this.keys = [];
+		this.values = [];
 		this.jsonManipulate();
 	},
 	jsonManipulate:function(){
@@ -35,8 +36,9 @@ var cc = {
 		                }
 		            }
 					//console.log(this.jsonData)
-					cc.buildSelectBox();
-		        }
+					//cc.buildSelectBox();
+		        	cc.buildOptionBox();
+				}
 		    );
 		
 	},
@@ -73,6 +75,51 @@ var cc = {
 			);
 			//this.showRes();
 			
+	},
+	buildOptionBox:function(){
+			$.getJSON(
+		        'js/currencies.json',
+		        function(data) {
+					this.curValue = jQuery.parseJSON(data);
+						console.log(this.curValue);
+					   for(var key in data){
+					      cc.keys.push(key);
+							console.log(cc.keys);
+					   }
+						for(var key in data){
+						      cc.values.push(data[key]);
+								console.log(data[key]);
+				   	   }
+					for(var i=0;i<cc.keys.length;i++){
+						 var objOption = document.createElement("option");
+						  objOption.text = cc.keys[i]+"-"+cc.values[i];
+						  objOption.value = cc.keys[i];
+						  document.getElementById("fromSelect").add(objOption);
+					   }
+					   for(var i=0;i<cc.keys.length;i++){
+						 var objOption = document.createElement("option");
+						  objOption.text = cc.keys[i]+"-"+cc.values[i];
+						  objOption.value = cc.keys[i];
+						  document.getElementById("toSelect").add(objOption);
+					   }
+						//$("#fromSelect").chosen();
+						//$("#toSelect").chosen();
+						cc.fromValue = document.getElementById("fromSelect").value;
+						cc.toValue = document.getElementById("toSelect").value;
+
+						$("#fromSelect").chosen().change(
+							function(){cc.fromValue = this.value; cc.from();}
+						);
+						$("#toSelect").chosen().change(
+							function(){cc.toValue = this.value; cc.to();}
+						);
+						$("#go").click(function(){
+							cc.showRes();
+							}	
+						);
+						//this.showRes();
+				}
+			);
 	},
 	from:function(){
 		console.log(this.fromValue)
